@@ -1,0 +1,64 @@
+Source: haskell-quickcheck-unicode
+Maintainer: Debian Haskell Group <pkg-haskell-maintainers@lists.alioth.debian.org>
+Uploaders: Joachim Breitner <nomeata@debian.org>
+Priority: optional
+Section: haskell
+Rules-Requires-Root: no
+Build-Depends: debhelper (>= 10),
+ haskell-devscripts (>= 0.13),
+ cdbs,
+ ghc (>= 8),
+ ghc-prof,
+ libghc-quickcheck2-dev (>= 2.7),
+ libghc-quickcheck2-prof,
+Build-Depends-Indep: ghc-doc,
+ libghc-quickcheck2-doc,
+Standards-Version: 4.5.0
+Homepage: https://github.com/bos/quickcheck-unicode
+Vcs-Browser: https://salsa.debian.org/haskell-team/DHG_packages/tree/master/p/haskell-quickcheck-unicode
+Vcs-Git: https://salsa.debian.org/haskell-team/DHG_packages.git [p/haskell-quickcheck-unicode]
+X-Description: Generator and shrink functions for testing Unicode-related software.
+ The default Arbitrary instance for the Char type intentionally generates only
+ ASCII values. This can lead to a false sense of security in cases where
+ Unicode compliance is required, as encodings that span multiple bytes or code
+ units will simply not be exercised at all.
+
+Package: libghc-quickcheck-unicode-dev
+Architecture: any
+Depends: ${haskell:Depends},
+ ${misc:Depends},
+ ${shlibs:Depends},
+Recommends: ${haskell:Recommends},
+Suggests: ${haskell:Suggests},
+Conflicts: ${haskell:Conflicts},
+Provides: ${haskell:Provides},
+Description: ${haskell:ShortDescription}${haskell:ShortBlurb}
+ ${haskell:LongDescription}
+ .
+ ${haskell:Blurb}
+
+Package: libghc-quickcheck-unicode-prof
+Architecture: any
+Depends: ${haskell:Depends},
+ ${misc:Depends},
+Recommends: ${haskell:Recommends},
+Suggests: ${haskell:Suggests},
+Conflicts: ${haskell:Conflicts},
+Provides: ${haskell:Provides},
+Description: ${haskell:ShortDescription}${haskell:ShortBlurb}
+ ${haskell:LongDescription}
+ .
+ ${haskell:Blurb}
+
+Package: libghc-quickcheck-unicode-doc
+Architecture: all
+Section: doc
+Depends: ${haskell:Depends},
+ ${misc:Depends},
+Recommends: ${haskell:Recommends},
+Suggests: ${haskell:Suggests},
+Conflicts: ${haskell:Conflicts},
+Description: ${haskell:ShortDescription}${haskell:ShortBlurb}
+ ${haskell:LongDescription}
+ .
+ ${haskell:Blurb}
